@@ -31,3 +31,7 @@ haproxy_systemd_build:
     - creates: /opt/apps/unix/haproxy-1.8/contrib/systemd/haproxy.service
     - require_in:
       - file: /lib/systemd/system/haproxy.service
+
+#/etc/haproxy/haproxy.cfg:
+#  file.copy:
+#    - source: salt://files/haproxy.cfg

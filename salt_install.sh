@@ -12,3 +12,5 @@ file_roots:
   base:
     - /tmp/salt_test/srv/salt
 EOF
+
+salt-call --id=lb1 state.apply
