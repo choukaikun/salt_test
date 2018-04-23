@@ -32,6 +32,7 @@ haproxy_systemd_build:
     - require_in:
       - file: /lib/systemd/system/haproxy.service
 
-#/etc/haproxy/haproxy.cfg:
-#  file.copy:
+/etc/haproxy/haproxy.cfg:
+  file.copy:
 #    - source: salt://files/haproxy.cfg
+    - source: /tmp/salt_files/srv/salt/files/haproxy.cfg
