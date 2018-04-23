@@ -35,4 +35,4 @@ haproxy_systemd_build:
 /etc/haproxy/haproxy.cfg:
   file.copy:
 #    - source: salt://files/haproxy.cfg
-    - source: /tmp/salt_files/srv/salt/files/haproxy.cfg
+    - source: /tmp/salt_test/srv/salt/files/haproxy.cfg
