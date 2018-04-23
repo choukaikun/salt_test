@@ -1,6 +1,4 @@
-nginx:
-  pkg.installed:
-    - pkg: nginx
-#  service.running:
-#    - enable: True
-#    - reload: True
+include:
+  - web.packages
+  - web.files
+  - web.server
