@@ -14,3 +14,4 @@ file_roots:
 EOF
 
 salt-call --id=lb1 state.apply
+salt-call --id=web1 state.apply
