@@ -13,3 +13,9 @@ create_runtime_dir:
       - file: /etc/tmpfiles.d/haproxy.conf
     - creates: /run/haproxy
 
+haproxy:
+  service.running:
+    - enable: True
+    - reload: True
+    - watch:
+      - file: /etc/haproxy/haproxy.cfg
