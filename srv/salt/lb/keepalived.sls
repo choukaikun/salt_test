@@ -7,9 +7,16 @@ https://github.com/acassen/keepalived:
 
 keepalived_configure:
   cmd.run:
-    - name: configure --prefix=/opt/apps/unix/keepalived && autoreconf -f -i
+    - name: ./configure --prefix=/opt/apps/unix/keepalived
     - cwd: /opt/apps/unix/src/keepalived
 #    - creates: /opt/apps/unix/keepalived/sbin/keepalived
+
+keepalived_autoreconf:
+  cmd.run:
+    - name: autoreconf -f -i
+    - cwd: /opt/apps/unix/src/keepalived
+    - require:
+      - pkg: autoconf
 
 keepalived_build:
   cmd.run:
@@ -17,7 +24,7 @@ keepalived_build:
     - cwd: /opt/apps/unix/src/keepalived
 #    - creates: /opt/apps/unix/src/keepalived/sbin/keepalived
 
-haproxy_install:
+keepalived_install:
   cmd.run:
     - name: /bin/make install
     - cwd: /opt/apps/unix/src/keepalived

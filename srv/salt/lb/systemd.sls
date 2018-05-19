@@ -1,6 +1,6 @@
 /lib/systemd/system/haproxy.service:
   file.copy:
-    - source: /opt/apps/unix/haproxy-1.8/contrib/systemd/haproxy.service
+    - source: /opt/apps/unix/src/haproxy-1.8/contrib/systemd/haproxy.service
 
 /etc/tmpfiles.d/haproxy.conf:
   file.managed:
