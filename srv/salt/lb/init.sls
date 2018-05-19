@@ -5,4 +5,5 @@ include:
   - lb.dirs
   - lb.haproxy
   - lb.rsyslog
+  - lb.keepalived
   - lb.systemd

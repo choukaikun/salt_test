@@ -8,7 +8,7 @@
 https://git.haproxy.org/git/haproxy-1.8.git:
   git.latest:
     - rev: master
-    - target: /opt/apps/unix/haproxy-1.8
+    - target: /opt/apps/unix/src/haproxy-1.8
     - require:
       - pkg: git
 
@@ -20,15 +20,15 @@ haproxy_build:
 
 haproxy_install:
   cmd.run:
-    - name: /bin/make install
+    - name: /bin/make PREFIX=/opt/apps/unix/haproxy install
     - cwd: /opt/apps/unix/haproxy-1.8
-    - unless: test -x /usr/local/sbin/haproxy
+    - unless: test -x /opt/apps/unix/haproxy/sbin/haproxy
 
 haproxy_systemd_build:
   cmd.run:
     - name: /bin/make
-    - cwd: /opt/apps/unix/haproxy-1.8/contrib/systemd
-    - creates: /opt/apps/unix/haproxy-1.8/contrib/systemd/haproxy.service
+    - cwd: /opt/apps/unix/src/haproxy-1.8/contrib/systemd
+    - creates: /opt/apps/unix/src/haproxy-1.8/contrib/systemd/haproxy.service
     - require_in:
       - file: /lib/systemd/system/haproxy.service
 

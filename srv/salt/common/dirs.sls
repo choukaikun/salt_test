@@ -1,4 +1,4 @@
-/opt/apps/unix:
+/opt/apps/unix/src:
   file.directory:
     - user: root
     - group: root
