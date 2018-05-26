@@ -25,11 +25,11 @@ for testing.  This has been developed and tested on an AWS RedHat 7.4 AMI that i
     ssh -i cli-key.pem ec2-user@$(!!)  <<< You can use the name from the above query
     
   Once logged in:
-    * sudo bash
-    * cd /tmp
-    * git clone https://github.com/choukaikun/salt_test
-    * cd salt_test
-    * ./salt_install.sh
+  * sudo bash
+  * cd /tmp
+  * git clone https://github.com/choukaikun/salt_test
+  * cd salt_test
+  * ./salt_install.sh
     
   After a few minutes you should be able to hit the public DNS name with a web browser and see the HTML boilerplate site and 
   you should see logging in /var/lib/haproxy.log on the AWS instance.
