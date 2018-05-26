@@ -3,10 +3,9 @@ This repo will install salt and run masterless to install the latest haproxy fro
 for testing.  This has been developed and tested on an AWS RedHat 7.4 AMI that is updated and has git installed.
 
 ## Example
-  Bring up an AWS instance, for example use the aws CLI and I will use my updated RedHat 7.4 AMI with git installed,
-  this will output the instance id:
+  Bring up an AWS instance, for example use the aws CLI and use the RedHat 7.5 AMI, this will output the instance id:
  
-    aws ec2 run-instances --image-id ami-0889fe5adccf7ccee --security-group-ids sg-07931d6b906bdfef2 \
+    aws ec2 run-instances --image-id ami-28e07e50 --security-group-ids sg-07931d6b906bdfef2 \
       --count 1 --instance-type t2.micro --key-name cli-key --query 'Reservations[0].Instances[0].InstanceId' \
       --output=text
 
